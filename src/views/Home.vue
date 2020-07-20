@@ -7,6 +7,8 @@
     <TheSlide3Nucleus />
     <TheSlide4Dark />
     <TheSlide5Galaxy />
+    <TheSlide6StarsSmall />
+    <TheSlide7StarsMedium />
   </div>
 </template>
 
@@ -18,6 +20,8 @@ import TheSlide2Proton from "@/components/TheSlide2Proton.vue";
 import TheSlide3Nucleus from "@/components/TheSlide3Nucleus.vue";
 import TheSlide4Dark from "@/components/TheSlide4Dark.vue";
 import TheSlide5Galaxy from "@/components/TheSlide5Galaxy.vue";
+import TheSlide6StarsSmall from "@/components/TheSlide6StarsSmall.vue";
+import TheSlide7StarsMedium from "@/components/TheSlide7StarsMedium.vue";
 
 export default {
   name: "Home",
@@ -28,6 +32,8 @@ export default {
     TheSlide3Nucleus,
     TheSlide4Dark,
     TheSlide5Galaxy,
+    TheSlide6StarsSmall,
+    TheSlide7StarsMedium,
   },
 };
 </script>
