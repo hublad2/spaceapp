@@ -1,0 +1,86 @@
+@import "./_variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap");
+
+%center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%tile-gray-text {
+  @extend %center;
+  background-color: $colorTile1;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: $colorFont1;
+  font-size: 5vw;
+  line-height: 6vw;
+  p {
+    margin: 10%;
+  }
+}
+
+%tile-gray {
+  @extend %center;
+  background-color: $colorTile1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 8vw;
+  color: $colorFont2;
+  text-align: center;
+  font-weight: 600;
+}
+
+%tile-gray-header {
+  @extend %center;
+  background-color: $colorTile1;
+  font-family: "Open Sans", sans-serif;
+  font-size: 10vw;
+  color: $colorFont2;
+  text-align: center;
+  font-weight: 600;
+}
+
+%tile-purple {
+  @extend %center;
+  background-color: $colorTile2;
+  font-family: "Open Sans", sans-serif;
+  color: $colorFont2;
+  text-align: center;
+  font-weight: 600;
+}
+
+%tile-white {
+  @extend %center;
+  background-color: $colorTile3;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  font-size: 8vw;
+  color: $colorFont2;
+  padding: 0 5%;
+}
+
+%tile-white-header {
+  @extend %center;
+  background-color: $colorTile3;
+  font-family: "Open Sans", sans-serif;
+  font-size: 10vw;
+  color: $colorFont2;
+  text-align: center;
+  font-weight: 600;
+}
+
+%button {
+  background-color: $colorButton;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  color: $colorFont1;
+  font-weight: 600;
+}
+
+%slide-settings {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(6, 16.6666vw);
+  /* background: linear-gradient(180deg, #0d1922 0%, rgba(15, 38, 51, 0.95) 100%); */
+}
