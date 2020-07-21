@@ -3,7 +3,7 @@
     <div class="hero-wrapper">
       <header class="hero__header">historia wszechświata</header>
       <h2 class="hero__header-second">Podróź od początku, aż do końca</h2>
-      <button class="hero__button">Rozpocznij</button>
+      <button @click="moveToFirstSlide" class="hero__button">Rozpocznij</button>
     </div>
     <img
       class="hero__background"
@@ -16,6 +16,13 @@
 <script>
 export default {
   name: "TheHero",
+  methods: {
+    moveToFirstSlide() {
+      document.querySelector("#slide1").scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+  },
 };
 </script>
 
@@ -50,6 +57,7 @@ export default {
     font-size: 2rem;
     margin: 6vh 0 20vh 0;
     color: $colorFont3;
+    font-weight: 600;
 
     @media screen and (min-width: 450px) {
       font-size: calc(2rem + 3vw);

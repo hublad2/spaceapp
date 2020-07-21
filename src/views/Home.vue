@@ -19,6 +19,19 @@
     <TheSlide14Earth />
     <TheSlide15Mars />
     <TheSlide16Jupiter />
+    <TheSlide17Saturn />
+    <TheSlide18Uranus />
+    <TheSlide19Neptune />
+    <TheSlide21AfterNeptune />
+    <TheSlide22FinalShock />
+    <TheSlide23Oort />
+    <TheSlide24Neighbourhood />
+    <TheSlide20SystemEnd />
+    <TheSlide25OurGalaxy />
+    <TheSlide26Local />
+    <TheSlide27Supergroup />
+    <TheSlide28Hubble />
+    <TheSlide29End />
   </div>
 </template>
 
@@ -42,6 +55,19 @@ import TheSlide13Venus from "@/components/TheSlide13Venus.vue";
 import TheSlide14Earth from "@/components/TheSlide14Earth.vue";
 import TheSlide15Mars from "@/components/TheSlide15Mars.vue";
 import TheSlide16Jupiter from "@/components/TheSlide16Jupiter.vue";
+import TheSlide17Saturn from "@/components/TheSlide17Saturn.vue";
+import TheSlide18Uranus from "@/components/TheSlide18Uranus.vue";
+import TheSlide19Neptune from "@/components/TheSlide19Neptune.vue";
+import TheSlide20SystemEnd from "@/components/TheSlide20SystemEnd.vue";
+import TheSlide21AfterNeptune from "@/components/TheSlide21AfterNeptune.vue";
+import TheSlide22FinalShock from "@/components/TheSlide22FinalShock.vue";
+import TheSlide23Oort from "@/components/TheSlide23Oort.vue";
+import TheSlide24Neighbourhood from "@/components/TheSlide24Neighbourhood.vue";
+import TheSlide25OurGalaxy from "@/components/TheSlide25OurGalaxy.vue";
+import TheSlide26Local from "@/components/TheSlide26Local.vue";
+import TheSlide27Supergroup from "@/components/TheSlide27Supergroup.vue";
+import TheSlide28Hubble from "@/components/TheSlide28Hubble.vue";
+import TheSlide29End from "@/components/TheSlide29End.vue";
 
 export default {
   name: "Home",
@@ -64,6 +90,19 @@ export default {
     TheSlide14Earth,
     TheSlide15Mars,
     TheSlide16Jupiter,
+    TheSlide17Saturn,
+    TheSlide18Uranus,
+    TheSlide19Neptune,
+    TheSlide20SystemEnd,
+    TheSlide21AfterNeptune,
+    TheSlide22FinalShock,
+    TheSlide23Oort,
+    TheSlide24Neighbourhood,
+    TheSlide25OurGalaxy,
+    TheSlide26Local,
+    TheSlide27Supergroup,
+    TheSlide28Hubble,
+    TheSlide29End,
   },
   data() {
     return {

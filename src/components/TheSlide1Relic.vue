@@ -1,5 +1,5 @@
 <template>
-  <section class="slide">
+  <section class="slide" id="slide1">
     <div class="slide__tile-time">
       <h1>10⁻⁴³ s</h1>
     </div>

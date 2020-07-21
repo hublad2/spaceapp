@@ -2,42 +2,36 @@
   <div>
     <section class="slide">
       <div class="slide__caption">
-        <h2>Jowisz</h2>
+        <h2>Neptun</h2>
       </div>
       <div class="slide__image">
         <img
-          src="../assets/Jupiter_and_its_shrunken_Great_Red_Spot_(cropped).jpg"
-          alt="Jowisz"
+          src="../assets/Neptune_-_Voyager_2_(29347980845)_flatten_crop.jpg"
+          alt="Neptun"
         />
       </div>
       <div class="slide__tile-text">
         <p>
-          Jowisz jest gazowym olbrzymem, składa się głównie z wodoru i helu.
-          Jego średnia gęstość wynosi 1,3 g/cm³, czyli nieco więcej od wody.
-          Posiada silne pole magnetyczne, a na powierzchni szaleją wiatry
-          osiągające prędkości nawet do 360 km/h.
+          Lodowy olbrzym, najdalsza od Słońca planeta w Układzie Słonecznym.
+          Neptuna, od Urana odróżnia między innymi duża aktywność pogodowa.
+          Wiatry na planecie osiągają prędkości do 2100 km/h.
           <br />
           <br />
-          Masa: 1,89 × 10²⁷ kg (318 mas Ziemi)
+          Masa: 1 × 10²⁶ kg (17,2 mas Ziemi)
           <br />
           <br />
-          Promień: 71 492 km (11,2 promienii Ziemi)
+          Promień: 24 622 km (3,85 promienii Ziemi)
           <br />
           <br />
-          Średnia temperatura: -108° C
+          Średnia temperatura: -201° C
         </p>
       </div>
-      <div class="slide__tile-text2">
-        <p>
-          Na Jowiszu, dzięki silnemu polu magnetycznemu, przy biegunach powstają
-          zorze.
-        </p>
-      </div>
+      <div class="slide__tile-fill"></div>
       <div class="slide__caption-aside">
-        <h3>Jowisz - zorza</h3>
+        <h3>Chmury na Neptunie</h3>
       </div>
       <div class="slide__image-aside">
-        <img src="../assets/Jupiter.Aurora.HST.UV.jpg" alt="Jowisz - zorza" />
+        <img src="../assets/chmury.png" alt="Chmury na Neptunie" />
       </div>
       <div v-if="!loaded" class="slide__button">
         <button @click="engage">Więcej zdjęć</button>
@@ -49,7 +43,7 @@
         :item="item"
         :index="index + 1"
         :key="item.data[0].nasa_id"
-        :id="`jup-pic${index}`"
+        :id="`nep-pic${index}`"
       />
     </div>
     <TheButton @click="pushImages" v-if="loaded" />
@@ -61,7 +55,7 @@ import TheSlide11Fetch from "@/components/TheSlide11Fetch.vue";
 import TheButton from "@/components/TheButton.vue";
 
 export default {
-  name: "TheSlide16Jupiter",
+  name: "TheSlide18Uranus",
   components: {
     TheSlide11Fetch,
     TheButton,
@@ -80,7 +74,7 @@ export default {
       this.fetchImages();
     },
     async fetchImages() {
-      const API = "https://images-api.nasa.gov/search?q=Jupiter";
+      const API = "https://images-api.nasa.gov/search?q=Neptune";
 
       let response = await fetch(`${API}&media_type=image`);
       let jsonResponse = await response.json();
@@ -93,14 +87,14 @@ export default {
       this.results = this.superResults.slice(0, this.currentPic);
       if (this.currentPic == 9) {
         await this.$nextTick();
-        document.querySelector("#jup-pic0").scrollIntoView({
+        document.querySelector("#nep-pic0").scrollIntoView({
           behavior: "smooth",
         });
       } else {
         await this.$nextTick();
         window.scroll(window.scrollX, positionY);
         document
-          .querySelector(`#jup-pic${this.currentPic - 10}`)
+          .querySelector(`#nep-pic${this.currentPic - 10}`)
           .scrollIntoView({
             behavior: "smooth",
           });
@@ -118,23 +112,20 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(24, 16.6666vw);
+  grid-template-rows: repeat(21, 16.6666vw);
   grid-template-areas:
     ".    .    .    cap  cap  cap   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
-    "text text text text text .  "
-    "text text text text text .  "
-    "text text text text text .  "
-    "text text text text text .     "
-    "text text text text text .     "
-    "text text text text text .     "
-    "text text text text text .     "
-    ". . text2 text2 text2 text2     "
-    ". . text2 text2 text2 text2     "
-    ". . text2 text2 text2 text2     "
+    "fil text text text text text  "
+    "fil text text text text text  "
+    "fil text text text text text  "
+    "fil text text text text text  "
+    ". text text text text text  "
+    ". text text text text text  "
+    ". text text text text text  "
     ".    .    .    .    .    .     "
     "capa  capa  capa    .    .    .     "
     "imga  imga  imga  imga  imga  imga   "
@@ -170,9 +161,9 @@ export default {
     @extend %tile-gray-text;
   }
 
-  &__tile-text2 {
-    grid-area: text2;
-    @extend %tile-purple-text;
+  &__tile-fill {
+    grid-area: fil;
+    @extend %tile-purple;
   }
 
   &__caption-aside {

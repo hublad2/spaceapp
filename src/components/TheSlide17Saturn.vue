@@ -2,42 +2,26 @@
   <div>
     <section class="slide">
       <div class="slide__caption">
-        <h2>Jowisz</h2>
+        <h2>Saturn</h2>
       </div>
       <div class="slide__image">
-        <img
-          src="../assets/Jupiter_and_its_shrunken_Great_Red_Spot_(cropped).jpg"
-          alt="Jowisz"
-        />
+        <img src="../assets/1920px-Saturn_during_Equinox.jpg" alt="Saturn" />
       </div>
       <div class="slide__tile-text">
         <p>
-          Jowisz jest gazowym olbrzymem, składa się głównie z wodoru i helu.
-          Jego średnia gęstość wynosi 1,3 g/cm³, czyli nieco więcej od wody.
-          Posiada silne pole magnetyczne, a na powierzchni szaleją wiatry
-          osiągające prędkości nawet do 360 km/h.
+          Saturn to kolejny gazowy olbrzym. Posiada ponad 50 księżyców.
+          Największy z nich - Tytan, jest większy od Merkurego. Znany ze swoich
+          9 pierścienii, składających się z lodu, skał i pyłu kosmicznego.
           <br />
           <br />
-          Masa: 1,89 × 10²⁷ kg (318 mas Ziemi)
+          Masa: 5,7 × 10²⁶ kg (95 mas Ziemi)
           <br />
           <br />
-          Promień: 71 492 km (11,2 promienii Ziemi)
+          Promień: 60 268 km (9,5 promienii Ziemi)
           <br />
           <br />
-          Średnia temperatura: -108° C
+          Średnia temperatura: -139° C
         </p>
-      </div>
-      <div class="slide__tile-text2">
-        <p>
-          Na Jowiszu, dzięki silnemu polu magnetycznemu, przy biegunach powstają
-          zorze.
-        </p>
-      </div>
-      <div class="slide__caption-aside">
-        <h3>Jowisz - zorza</h3>
-      </div>
-      <div class="slide__image-aside">
-        <img src="../assets/Jupiter.Aurora.HST.UV.jpg" alt="Jowisz - zorza" />
       </div>
       <div v-if="!loaded" class="slide__button">
         <button @click="engage">Więcej zdjęć</button>
@@ -49,7 +33,7 @@
         :item="item"
         :index="index + 1"
         :key="item.data[0].nasa_id"
-        :id="`jup-pic${index}`"
+        :id="`sat-pic${index}`"
       />
     </div>
     <TheButton @click="pushImages" v-if="loaded" />
@@ -61,7 +45,7 @@ import TheSlide11Fetch from "@/components/TheSlide11Fetch.vue";
 import TheButton from "@/components/TheButton.vue";
 
 export default {
-  name: "TheSlide16Jupiter",
+  name: "TheSlide17Saturn",
   components: {
     TheSlide11Fetch,
     TheButton,
@@ -80,7 +64,7 @@ export default {
       this.fetchImages();
     },
     async fetchImages() {
-      const API = "https://images-api.nasa.gov/search?q=Jupiter";
+      const API = "https://images-api.nasa.gov/search?q=Saturn";
 
       let response = await fetch(`${API}&media_type=image`);
       let jsonResponse = await response.json();
@@ -93,14 +77,14 @@ export default {
       this.results = this.superResults.slice(0, this.currentPic);
       if (this.currentPic == 9) {
         await this.$nextTick();
-        document.querySelector("#jup-pic0").scrollIntoView({
+        document.querySelector("#sat-pic0").scrollIntoView({
           behavior: "smooth",
         });
       } else {
         await this.$nextTick();
         window.scroll(window.scrollX, positionY);
         document
-          .querySelector(`#jup-pic${this.currentPic - 10}`)
+          .querySelector(`#sat-pic${this.currentPic - 10}`)
           .scrollIntoView({
             behavior: "smooth",
           });
@@ -118,29 +102,19 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(24, 16.6666vw);
+  grid-template-rows: repeat(14, 16.6666vw);
   grid-template-areas:
     ".    .    .    cap  cap  cap   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
-    "text text text text text .  "
-    "text text text text text .  "
-    "text text text text text .  "
-    "text text text text text .     "
-    "text text text text text .     "
-    "text text text text text .     "
-    "text text text text text .     "
-    ". . text2 text2 text2 text2     "
-    ". . text2 text2 text2 text2     "
-    ". . text2 text2 text2 text2     "
-    ".    .    .    .    .    .     "
-    "capa  capa  capa    .    .    .     "
-    "imga  imga  imga  imga  imga  imga   "
-    "imga  imga  imga  imga  imga  imga   "
-    "imga  imga  imga  imga  imga  imga   "
-    "imga  imga  imga  imga  imga  imga   "
+    "text text text text text text  "
+    "text text text text text text  "
+    "text text text text text text  "
+    "text text text text text text  "
+    "text text text text text text  "
+    "text text text text text text  "
     ".    .    .    .    .    .     "
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
@@ -168,30 +142,6 @@ export default {
   &__tile-text {
     grid-area: text;
     @extend %tile-gray-text;
-  }
-
-  &__tile-text2 {
-    grid-area: text2;
-    @extend %tile-purple-text;
-  }
-
-  &__caption-aside {
-    grid-area: capa;
-    font-size: 5vw;
-    @extend %tile-purple;
-  }
-
-  &__image-aside {
-    grid-area: imga;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   &__button {
