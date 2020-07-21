@@ -17,11 +17,16 @@
         Gwiazda średniej masy w granicach od 0.5 do 10 mas Słońca. Obiekty tego
         typu są w stanie “spalać” cięższe pierwiastki uzyskując z nich energię,
         w trakcie zamiany “paliwa” znacznie zwiększają swoją średnicę, nawet
-        kilkusetkrotnie. Pod koniec życia, gwiazda taka odrzuca swoją zewnętrzną
-        otoczkę, tworząc mgławicę planetarną. Po gwieździe pozostaje jedynie
-        biały karzeł o średnicy zaledwie kilku tysięcy kilometrów. Cały proces
-        zajmuje znacznie krócej niż w przypadku gwiazd małomasywnych, w
-        zależności od masy od kilkuset milionów do kilku miliardów lat.
+        kilkusetkrotnie.
+      </p>
+    </div>
+    <div class="slide__tile-text2">
+      <p>
+        Pod koniec życia, gwiazda taka odrzuca swoją zewnętrzną otoczkę, tworząc
+        mgławicę planetarną. Po gwieździe pozostaje jedynie biały karzeł o
+        średnicy zaledwie kilku tysięcy kilometrów. Cały proces zajmuje znacznie
+        krócej niż w przypadku gwiazd małomasywnych, w zależności od masy od
+        kilkuset milionów do kilku miliardów lat.
       </p>
     </div>
     <aside class="slide__tile-side">
@@ -46,7 +51,7 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(21, 16.6666vw);
+  grid-template-rows: repeat(24, 16.6666vw);
   grid-template-areas:
     "hero hero hero hero hero .   "
     "hero hero hero hero hero .   "
@@ -61,14 +66,17 @@ export default {
     ".    text text text text text"
     ".    text text text text text"
     ".    text text text text text"
-    ".    text text text text text"
-    ".    text text text text text"
-    ".    text text text text text"
-    ".    text text text text text"
-    ".    text text text text text"
-    "aside aside aside aside  aside .  "
-    "aside aside aside aside aside .  "
-    ". . . . . .  ";
+    ".     .     .     .     .     .  "
+    "text2 text2 text2 text2 text2 ."
+    "text2 text2 text2 text2 text2 ."
+    "text2 text2 text2 text2 text2 ."
+    "text2 text2 text2 text2 text2 ."
+    "text2 text2 text2 text2 text2 ."
+    "text2 text2 text2 text2 text2 ."
+    ".     .     .     .     .     .  "
+    ". aside aside aside  aside aside  "
+    ". aside aside aside aside aside  "
+    ".     .     .     .     .     .  ";
 
   &__star-hero {
     grid-area: hero;
@@ -100,6 +108,11 @@ export default {
 
   &__tile-text {
     grid-area: text;
+    @extend %tile-gray-text;
+  }
+
+  &__tile-text2 {
+    grid-area: text2;
     @extend %tile-gray-text;
   }
 

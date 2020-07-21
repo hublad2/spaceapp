@@ -9,6 +9,10 @@
     <TheSlide5Galaxy />
     <TheSlide6StarsSmall />
     <TheSlide7StarsMedium />
+    <TheSlide8StarsBig />
+    <TheSlide9Now />
+    <TheSlide10Begining />
+    <TheSlide11Sun />
   </div>
 </template>
 
@@ -22,6 +26,10 @@ import TheSlide4Dark from "@/components/TheSlide4Dark.vue";
 import TheSlide5Galaxy from "@/components/TheSlide5Galaxy.vue";
 import TheSlide6StarsSmall from "@/components/TheSlide6StarsSmall.vue";
 import TheSlide7StarsMedium from "@/components/TheSlide7StarsMedium.vue";
+import TheSlide8StarsBig from "@/components/TheSlide8StarsBig.vue";
+import TheSlide9Now from "@/components/TheSlide9Now.vue";
+import TheSlide10Begining from "@/components/TheSlide10Begining.vue";
+import TheSlide11Sun from "@/components/TheSlide11Sun.vue";
 
 export default {
   name: "Home",
@@ -34,6 +42,15 @@ export default {
     TheSlide5Galaxy,
     TheSlide6StarsSmall,
     TheSlide7StarsMedium,
+    TheSlide8StarsBig,
+    TheSlide9Now,
+    TheSlide10Begining,
+    TheSlide11Sun,
+  },
+  data() {
+    return {
+      results: [],
+    };
   },
 };
 </script>
