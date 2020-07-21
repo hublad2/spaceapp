@@ -1,29 +1,37 @@
 <template>
   <div>
     <section class="slide">
-      <div class="slide__star-hero">
-        <h1>Obiekty układu</h1>
-      </div>
       <div class="slide__caption">
-        <h2>Słońce</h2>
+        <h2>Ziemia</h2>
       </div>
       <div class="slide__image">
         <img
-          src="../assets/1024px-Solar_prominence_from_STEREO_spacecraft_September_29,_2008.jpg"
-          alt="Słońce"
+          src="../assets/599px-The_Earth_seen_from_Apollo_17.jpg"
+          alt="Ziemia"
         />
       </div>
       <div class="slide__tile-text">
         <p>
-          Słońce to największy obiekt w układzie słonecznym. To gwiazda średnich
-          rozmiarów i masy.
+          Ziemia - trzecia w kolejności planeta od Słońca. Liczy około 4,5 mld
+          lat. Posiada gęstą atmosferę składającą się w 78% z azotu, 21% z tlenu
+          i innych gazów. Jest chroniona przed wiatrem słonecznym poprzez pole
+          magnetyczne, wytwarzane przez płynne jądro.
           <br />
           <br />
-          Masa: 1,98855 x 10³⁰ kg
+          Masa: 5,97 × 10²⁴ kg
           <br />
           <br />
-          Promień: 696 342 km (109 promieni Ziemi)
+          Promień: 6371 km
+          <br />
+          <br />
+          Średnia temperatura: 15° C
         </p>
+      </div>
+      <div class="slide__caption-aside">
+        <h3>Zorza polarna</h3>
+      </div>
+      <div class="slide__image-aside">
+        <img src="../assets/1280px-Polarlicht_2.jpg" alt="Zorza polarna" />
       </div>
       <div v-if="!loaded" class="slide__button">
         <button @click="engage">Więcej zdjęć</button>
@@ -35,7 +43,7 @@
         :item="item"
         :index="index + 1"
         :key="item.data[0].nasa_id"
-        :id="`sun-pic${index}`"
+        :id="`ear-pic${index}`"
       />
     </div>
     <TheButton @click="pushImages" v-if="loaded" />
@@ -47,7 +55,7 @@ import TheSlide11Fetch from "@/components/TheSlide11Fetch.vue";
 import TheButton from "@/components/TheButton.vue";
 
 export default {
-  name: "TheSlide11Sun",
+  name: "TheSlide14Earth",
   components: {
     TheSlide11Fetch,
     TheButton,
@@ -66,7 +74,7 @@ export default {
       this.fetchImages();
     },
     async fetchImages() {
-      const API = "https://images-api.nasa.gov/search?q=Sun";
+      const API = "https://images-api.nasa.gov/search?q=Earth";
 
       let response = await fetch(`${API}&media_type=image`);
       let jsonResponse = await response.json();
@@ -79,14 +87,14 @@ export default {
       this.results = this.superResults.slice(0, this.currentPic);
       if (this.currentPic == 9) {
         await this.$nextTick();
-        document.querySelector("#sun-pic0").scrollIntoView({
+        document.querySelector("#ear-pic0").scrollIntoView({
           behavior: "smooth",
         });
       } else {
         await this.$nextTick();
         window.scroll(window.scrollX, positionY);
         document
-          .querySelector(`#sun-pic${this.currentPic - 10}`)
+          .querySelector(`#ear-pic${this.currentPic - 10}`)
           .scrollIntoView({
             behavior: "smooth",
           });
@@ -104,32 +112,29 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(15, 16.6666vw);
+  grid-template-rows: repeat(21, 16.6666vw);
   grid-template-areas:
-    "hero hero hero hero hero .     "
-    "hero hero hero hero hero .     "
-    ".    .    .    .    .    .     "
     ".    .    .    cap  cap  cap   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
-    "text text text text text text  "
-    "text text text text text text  "
-    "text text text text text text  "
-    "text text text text text text  "
+    "text text text text text .  "
+    "text text text text text .  "
+    "text text text text text .  "
+    "text text text text text .     "
+    "text text text text text .     "
+    "text text text text text .     "
+    "text text text text text .     "
+    ".    .    .    .    .    .     "
+    "capa  capa  capa    .    .    .     "
+    "imga  imga  imga  imga  imga  imga   "
+    "imga  imga  imga  imga  imga  imga   "
+    "imga  imga  imga  imga  imga  imga   "
+    "imga  imga  imga  imga  imga  imga   "
     ".    .    .    .    .    .     "
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
-
-  &__star-hero {
-    grid-area: hero;
-    @extend %tile-gray-header;
-    /* @extend %tile-white-header; */
-    /*  @extend %tile-white; */
-    /* @extend %tile-gray; */
-    font-size: 8vw;
-  }
 
   &__caption {
     grid-area: cap;
@@ -156,6 +161,25 @@ export default {
     @extend %tile-gray-text;
   }
 
+  &__caption-aside {
+    grid-area: capa;
+    font-size: 5vw;
+    @extend %tile-purple;
+  }
+
+  &__image-aside {
+    grid-area: imga;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
   &__button {
     grid-area: but;
 
@@ -165,11 +189,6 @@ export default {
       @extend %button;
       font-size: 5vw;
     }
-  }
-
-  &__tile-text2 {
-    grid-area: text2;
-    @extend %tile-gray-text;
   }
 }
 </style>

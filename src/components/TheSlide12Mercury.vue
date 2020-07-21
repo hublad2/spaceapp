@@ -1,28 +1,26 @@
 <template>
   <div>
     <section class="slide">
-      <div class="slide__star-hero">
-        <h1>Obiekty układu</h1>
-      </div>
       <div class="slide__caption">
-        <h2>Słońce</h2>
+        <h2>Merkury</h2>
       </div>
       <div class="slide__image">
         <img
-          src="../assets/1024px-Solar_prominence_from_STEREO_spacecraft_September_29,_2008.jpg"
-          alt="Słońce"
+          src="../assets/Mercury_in_color_-_Prockter07-edit1.jpg"
+          alt="Merkury"
         />
       </div>
       <div class="slide__tile-text">
         <p>
-          Słońce to największy obiekt w układzie słonecznym. To gwiazda średnich
-          rozmiarów i masy.
+          Merkury to pierwsza planeta od Słońca. Jego powierzchnia - pokryta
+          kraterami - bardzo przypomina powierzchnię księżyca, posiada rzadką
+          atmosferę.
           <br />
           <br />
-          Masa: 1,98855 x 10³⁰ kg
+          Masa: 3,3011 x 10²³ kg (0,05 masy Ziemi)
           <br />
           <br />
-          Promień: 696 342 km (109 promieni Ziemi)
+          Promień: 2439,7 km (0,38 promieni Ziemi)
         </p>
       </div>
       <div v-if="!loaded" class="slide__button">
@@ -35,7 +33,7 @@
         :item="item"
         :index="index + 1"
         :key="item.data[0].nasa_id"
-        :id="`sun-pic${index}`"
+        :id="`mer-pic${index}`"
       />
     </div>
     <TheButton @click="pushImages" v-if="loaded" />
@@ -47,7 +45,7 @@ import TheSlide11Fetch from "@/components/TheSlide11Fetch.vue";
 import TheButton from "@/components/TheButton.vue";
 
 export default {
-  name: "TheSlide11Sun",
+  name: "TheSlide12Mercury",
   components: {
     TheSlide11Fetch,
     TheButton,
@@ -66,7 +64,7 @@ export default {
       this.fetchImages();
     },
     async fetchImages() {
-      const API = "https://images-api.nasa.gov/search?q=Sun";
+      const API = "https://images-api.nasa.gov/search?q=Mercury";
 
       let response = await fetch(`${API}&media_type=image`);
       let jsonResponse = await response.json();
@@ -79,14 +77,14 @@ export default {
       this.results = this.superResults.slice(0, this.currentPic);
       if (this.currentPic == 9) {
         await this.$nextTick();
-        document.querySelector("#sun-pic0").scrollIntoView({
+        document.querySelector("#mer-pic0").scrollIntoView({
           behavior: "smooth",
         });
       } else {
         await this.$nextTick();
         window.scroll(window.scrollX, positionY);
         document
-          .querySelector(`#sun-pic${this.currentPic - 10}`)
+          .querySelector(`#mer-pic${this.currentPic - 10}`)
           .scrollIntoView({
             behavior: "smooth",
           });
@@ -104,11 +102,8 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(15, 16.6666vw);
+  grid-template-rows: repeat(13, 16.6666vw);
   grid-template-areas:
-    "hero hero hero hero hero .     "
-    "hero hero hero hero hero .     "
-    ".    .    .    .    .    .     "
     ".    .    .    cap  cap  cap   "
     "img  img  img  img  img  img   "
     "img  img  img  img  img  img   "
@@ -118,18 +113,10 @@ export default {
     "text text text text text text  "
     "text text text text text text  "
     "text text text text text text  "
+    "text text text text text text  "
     ".    .    .    .    .    .     "
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
-
-  &__star-hero {
-    grid-area: hero;
-    @extend %tile-gray-header;
-    /* @extend %tile-white-header; */
-    /*  @extend %tile-white; */
-    /* @extend %tile-gray; */
-    font-size: 8vw;
-  }
 
   &__caption {
     grid-area: cap;
@@ -165,11 +152,6 @@ export default {
       @extend %button;
       font-size: 5vw;
     }
-  }
-
-  &__tile-text2 {
-    grid-area: text2;
-    @extend %tile-gray-text;
   }
 }
 </style>

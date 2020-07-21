@@ -13,6 +13,12 @@
     <TheSlide9Now />
     <TheSlide10Begining />
     <TheSlide11Sun />
+    <TheSlide11Corona />
+    <TheSlide12Mercury />
+    <TheSlide13Venus />
+    <TheSlide14Earth />
+    <TheSlide15Mars />
+    <TheSlide16Jupiter />
   </div>
 </template>
 
@@ -30,6 +36,12 @@ import TheSlide8StarsBig from "@/components/TheSlide8StarsBig.vue";
 import TheSlide9Now from "@/components/TheSlide9Now.vue";
 import TheSlide10Begining from "@/components/TheSlide10Begining.vue";
 import TheSlide11Sun from "@/components/TheSlide11Sun.vue";
+import TheSlide11Corona from "@/components/TheSlide11Corona.vue";
+import TheSlide12Mercury from "@/components/TheSlide12Mercury.vue";
+import TheSlide13Venus from "@/components/TheSlide13Venus.vue";
+import TheSlide14Earth from "@/components/TheSlide14Earth.vue";
+import TheSlide15Mars from "@/components/TheSlide15Mars.vue";
+import TheSlide16Jupiter from "@/components/TheSlide16Jupiter.vue";
 
 export default {
   name: "Home",
@@ -46,6 +58,12 @@ export default {
     TheSlide9Now,
     TheSlide10Begining,
     TheSlide11Sun,
+    TheSlide11Corona,
+    TheSlide12Mercury,
+    TheSlide13Venus,
+    TheSlide14Earth,
+    TheSlide15Mars,
+    TheSlide16Jupiter,
   },
   data() {
     return {
