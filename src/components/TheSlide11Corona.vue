@@ -74,14 +74,13 @@ export default {
 
 .slide-corona {
   @extend %slide-settings;
-  grid-template-rows: repeat(10, 16.6666vw);
+  grid-template-rows: repeat(9, 16.6666vw);
   grid-template-areas:
-    "text text text text fill fill"
-    "text text text text fill fill"
-    "text text text text fill fill"
-    "text text text text .    .   "
-    "text text text text .    .   "
-    "text text text text .    .   "
+    "text text text text text fill"
+    "text text text text text fill"
+    "text text text text text fill"
+    "text text text text text    .   "
+    "text text text text text    .   "
     "fil2 . asid    asid asid asid"
     ".    .    asid    asid asid asid"
     ".    .    asid    asid asid asid"

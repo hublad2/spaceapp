@@ -14,10 +14,9 @@
     </div>
     <div class="slide__tile-text">
       <p>
-        W tym okresie formują się pierwsze galaktyki, pojawia się nieco światła
-        - pierwszy raz od powstania wscechświata skupiony gaz “zapala się”
-        tworząc gwiazdy. W wyniku supernowych, pojawiły się pierwiastki cięższe
-        od litu.
+        Gwiazda małomasywne - czyli takie, których masa nie przekracza 0.5 masy
+        Słońca. Każda gwiazda na początek robi użytek z najpowszechniejszego
+        pierwiastka - wodoru, “spalając” go uzyskuje ogromne ilości energii.
       </p>
     </div>
     <div class="slide__tile-text2">

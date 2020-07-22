@@ -34,10 +34,9 @@ export default {
 .hero {
   height: 100vh;
   display: flex;
-  background: linear-gradient(180deg, #0d1922 0%, rgba(15, 38, 51, 0.95) 100%);
   align-items: center;
   padding: 0 5vw;
-  z-index: -1;
+  z-index: 1;
   position: relative;
   overflow: hidden;
 
@@ -68,6 +67,7 @@ export default {
     font-size: 2rem;
     width: calc(197px + 3vw);
     height: calc(57px + 2vw);
+    z-index: 99;
     @extend %button;
 
     @media screen and (min-width: 450px) {

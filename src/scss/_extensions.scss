@@ -18,6 +18,11 @@
   p {
     margin: 10%;
   }
+
+  @media screen and (min-width: 700px) {
+    font-size: 1.5vw;
+    line-height: 2vw;
+  }
 }
 
 %tile-gray {
@@ -28,6 +33,10 @@
   color: $colorFont2;
   text-align: center;
   font-weight: 600;
+
+  @media screen and (min-width: 700px) {
+    font-size: 3vw;
+  }
 }
 
 %tile-gray-header {
@@ -38,6 +47,10 @@
   color: $colorFont2;
   text-align: center;
   font-weight: 600;
+
+  @media screen and (min-width: 700px) {
+    font-size: 4.2vw;
+  }
 }
 
 %tile-purple {
@@ -47,6 +60,11 @@
   color: $colorFont2;
   text-align: center;
   font-weight: 600;
+  font-size: 5vw;
+
+  @media screen and (min-width: 700px) {
+    font-size: 3vw;
+  }
 }
 
 %tile-purple-text {
@@ -60,6 +78,10 @@
   p {
     margin: 10%;
   }
+
+  @media screen and (min-width: 700px) {
+    font-size: 3vw;
+  }
 }
 
 %tile-white {
@@ -68,9 +90,28 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   text-align: center;
-  font-size: 8vw;
   color: $colorFont2;
   padding: 0 5%;
+  font-size: 5vw;
+
+  @media screen and (min-width: 700px) {
+    font-size: 3vw;
+  }
+}
+
+%tile-white-time {
+  @extend %center;
+  background-color: $colorTile3;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: $colorFont2;
+  padding: 0 5%;
+  font-size: 8vw;
+
+  @media screen and (min-width: 700px) {
+    font-size: 3vw;
+  }
 }
 
 %tile-white-header {
@@ -83,6 +124,10 @@
   font-weight: 600;
 
   padding: 0 2%;
+
+  @media screen and (min-width: 700px) {
+    font-size: 4.2vw;
+  }
 }
 
 %button {
@@ -98,4 +143,10 @@
   display: grid;
   grid-template-columns: repeat(6, 16.6666vw);
   /* background: linear-gradient(180deg, #0d1922 0%, rgba(15, 38, 51, 0.95) 100%); */
+
+  @media screen and (min-width: 700px) {
+    margin: 0 25% 0 10%;
+    width: 65vw;
+    grid-template-columns: repeat(10, 6.5vw);
+  }
 }

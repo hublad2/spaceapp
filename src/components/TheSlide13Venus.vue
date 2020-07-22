@@ -111,7 +111,7 @@ export default {
 
 .slide {
   @extend %slide-settings;
-  grid-template-rows: repeat(18, 16.6666vw);
+  grid-template-rows: repeat(19, 16.6666vw);
   grid-template-areas:
     ".    .    .    cap  cap  cap   "
     "img  img  img  img  img  img   "
@@ -124,6 +124,7 @@ export default {
     "text text text text text .     "
     "text text text text text .     "
     "text text text text text .     "
+    ".    asid asid asid asid asid  "
     ".    asid asid asid asid asid  "
     ".    asid asid asid asid asid  "
     ".    asid asid asid asid asid  "

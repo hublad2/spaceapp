@@ -7,10 +7,7 @@
       <h2>Dysk protoplanetarny</h2>
     </div>
     <div class="slide__image">
-      <img
-        src="../assets/Digitized_Sky_Survey_Image_of_Betelgeuse.jpg"
-        alt="Betelgeza"
-      />
+      <img src="../assets/M42proplyds.jpg" alt="Dysk protoplanetarny" />
     </div>
     <div class="slide__tile-text">
       <p>

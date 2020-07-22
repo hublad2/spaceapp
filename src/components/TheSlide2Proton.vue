@@ -58,6 +58,19 @@ export default {
     "fil2 fil2 fil2 fil2 .    .   "
     ".    .    .    .    .    .    ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(8, 6.5vw);
+    grid-template-areas:
+      "time time .    .    cap  cap  cap  cap  cap  .   "
+      "time time .     .  img img img  img  img  img"
+      "bang bang bang bang  img img img  img  img  img"
+      "bang bang bang bang  img img img  img  img  img"
+      "bang bang bang bang  img img img  img  img  img"
+      ".   .   text text text text text  fil2  fil2    .   "
+      ".   .   text text text text text fil2 fil2 .     "
+      ".   .   .    .    .    .    .    .    .    .    ";
+  }
+
   &__tile-time {
     grid-area: time;
     /* @extend %tile-gray-header; */
@@ -76,7 +89,6 @@ export default {
 
   &__tile-caption {
     grid-area: cap;
-    font-size: 5vw;
     /* @extend %tile-white; */
     @extend %tile-purple;
   }

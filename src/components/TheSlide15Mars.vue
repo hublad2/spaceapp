@@ -138,6 +138,8 @@ export default {
       let responseJSON = await response.json();
       let { sol_keys } = responseJSON;
 
+      console.log(responseJSON[sol_keys.pop()]);
+
       const {
         AT: { av: avgTemp, mn: minTemp, mx: maxTemp },
         HWS: { av: avgWindSpeed },
