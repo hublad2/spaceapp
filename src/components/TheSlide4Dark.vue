@@ -46,9 +46,9 @@ export default {
   grid-template-areas:
     "time time time time time .    "
     "time time time time time .    "
-    "time time time time time fil3    "
-    ".    .    .    .    bang bang"
-    "cap  cap  cap  .    bang bang"
+    "time time time time time .    "
+    ".    .    .    bang bang bang       "
+    "cap  cap  cap  bang  bang bang       "
     "text text text text text .   "
     "text text text text text .   "
     "text text text text text .   "
@@ -60,26 +60,41 @@ export default {
     "fil2 fil2 .    .    .    .   "
     ".    .    .    .    .    .  ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(9, 6.5vw);
+    grid-template-areas:
+      "time time time  time  time  .     .    .    .    .   "
+      "time time time  time  time  cap   cap  cap  cap  cap "
+      "bang bang bang  bang  bang  text  text text text text"
+      "bang bang bang  bang  bang  text  text text text text"
+      "bang bang bang  bang  bang  text  text text text text"
+      ".    .    .     .     .     text  text text text text"
+      "fil  fil  fil   .     .     text  text text text text"
+      "fil  fil  fil   .     .     text  text text text text"
+      ".    .    .     .     .     .     .    .    .    .   ";
+  }
+
   &__tile-time {
     grid-area: time;
-    @extend %tile-gray-header;
+    /* @extend %tile-gray-header; */
     /* @extend %tile-white-header; */
     /*  @extend %tile-white; */
-    /* @extend %tile-gray; */
-    font-size: 9vw;
+    @extend %tile-gray;
   }
 
   &__tile-bang {
     grid-area: bang;
     /* @extend %tile-gray-header; */
-    /* @extend %tile-white-header; */
-    @extend %tile-white;
-    font-size: 5.3vw;
+    @extend %tile-white-header;
+    /* @extend %tile-white; */
+
+    @media screen and (max-width: 700px) {
+      font-size: 7vw;
+    }
   }
 
   &__tile-caption {
     grid-area: cap;
-    font-size: 5vw;
     /* @extend %tile-white; */
     @extend %tile-purple;
   }
