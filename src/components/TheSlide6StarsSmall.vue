@@ -30,6 +30,7 @@
       </p>
     </div>
     <div class="slide__tile-fill"></div>
+    <div class="slide__tile-fill2"></div>
   </section>
 </template>
 
@@ -71,6 +72,23 @@ export default {
     ".    text2 text2 text2 text2 text2"
     ".  .    .    .    .    .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(12, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero . .   .   .   .         "
+      "hero hero hero hero hero . cap cap cap cap       "
+      "fil  fil  .    .    img  img  img img   img  img "
+      "fil  fil  .    .    img  img  img img   img  img "
+      ".    .    fil2 fil2 img  img  img img   img  img "
+      ".    .    fil2 fil2 img  img  img img   img  img "
+      "text text text text text text text text text text"
+      "text text text text text text text text text text"
+      "text2 text2 text2 text2 text2 text2 text2 text2 text2 text2"
+      "text2 text2 text2 text2 text2 text2 text2 text2 text2 text2"
+      "text2 text2 text2 text2 text2 text2 text2 text2 text2 text2"
+      ".     .     .     .     .     .     .     .     .     .    ";
+  }
+
   &__star-hero {
     grid-area: hero;
     /* @extend %tile-gray-header; */
@@ -81,7 +99,6 @@ export default {
 
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     /* @extend %tile-white; */
     @extend %tile-purple;
   }
@@ -101,6 +118,11 @@ export default {
 
   &__tile-fill {
     grid-area: fil;
+    @extend %tile-purple;
+  }
+
+  &__tile-fill2 {
+    grid-area: fil2;
     @extend %tile-purple;
   }
 
