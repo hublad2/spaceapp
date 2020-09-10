@@ -67,20 +67,39 @@ export default {
     ".    text2   text2 text2 text2 text2"
     ".    .    .    .    .    .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(13, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero .  .    .    .    .    "
+      "hero hero hero hero hero .  cap  cap  cap   cap "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "text text text text text text text text text ."
+      "text text text text text text text text text fil2"
+      "fil  fil  fil  fil  fil  fil  fil  fil  fil  fil "
+      "fil3 text2 text2 text2 text2 text2 text2 text2 text2 text2"
+      ".    text2 text2 text2 text2 text2 text2 text2 text2 text2"
+      ".    .    .    .    .    .   .   .   .   .";
+  }
+
   &__star-hero {
     grid-area: hero;
     @extend %tile-gray-header;
     /* @extend %tile-white-header; */
     /*  @extend %tile-white; */
     /* @extend %tile-gray; */
-    font-size: 8vw;
   }
 
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
+    @media screen and (min-width: 700px) {
+      font-size: 2.2vw;
+    }
   }
 
   &__image {
