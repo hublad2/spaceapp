@@ -189,9 +189,26 @@ export default {
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(13, 6.5vw);
+    grid-template-areas:
+      ".    .    .   .   .    .    cap  cap  cap cap "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "text text text text text text asid asid asid asid"
+      "text text text text text text asid asid asid asid"
+      "text text text text text text asid asid asid asid"
+      "text text text text text text   asid asid asid asid"
+      ".    .    .    .    .    .    .    .    .    .   "
+      ".    .    .    but  but  but  but  .    .    .   "
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
@@ -226,18 +243,28 @@ export default {
     h1 {
       font-size: 9vw;
       margin-bottom: 13%;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2.5vw;
+        margin-bottom: 10%;
+      }
     }
 
     p {
       margin: 0;
       line-height: 7vw;
+
+      @media screen and (min-width: 700px) {
+        line-height: 2.2vw;
+        margin: 0 2%;
+        font-size: 1.42vw;
+      }
     }
 
     button {
       @extend %button;
-      font-size: 5vw;
-      width: 60%;
-      height: 30%;
+      width: 90%;
+      height: 25%;
       margin-top: 12%;
     }
   }
@@ -249,7 +276,6 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
     }
   }
 }
