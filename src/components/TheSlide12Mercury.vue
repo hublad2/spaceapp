@@ -118,9 +118,25 @@ export default {
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(12, 6.5vw);
+    grid-template-areas:
+      ".    .    .   .   .    .    cap  cap  cap cap "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "text text text text text text text text text text"
+      "text text text text text text text text text text"
+      "text text text text text text text text text text"
+      ".    .    .    .    .    .    .    .    .    .   "
+      ".    .    .    but  but  but  but  .    .    .   "
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
@@ -150,7 +166,6 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
     }
   }
 }
