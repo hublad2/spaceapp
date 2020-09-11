@@ -23,6 +23,7 @@
       </p>
     </div>
     <div class="slide__tile-fill"></div>
+    <div class="slide__tile-fill2"></div>
     <div class="slide__caption3">
       <h4>Pluton</h4>
     </div>
@@ -71,6 +72,30 @@ export default {
     "img2  img2  img2  img2  img2  img2"
     ".      .     .   .   .   .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(19, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero  hero hero hero hero hero "
+      "hero hero hero hero hero  hero hero hero hero hero "
+      ".    .    .    .    .    .    .    .    .    .   "
+      "cap  cap  cap cap .    .    .    .    .   .   "
+      "img  img  img img img  img  img  img  cap2 cap2 "
+      "img  img  img img img  img  img  img  cap2 cap2 "
+      "img  img  img img img  img  img  img  fil  .     "
+      "img  img  img img img  img  img  img  fil  fil2  "
+      "img  img  img img img  img  img  img  .    fil2  "
+      "text text text text text text text text text text"
+      "text text text text text text text text text text"
+      ".    .    .    .    .    .    .    .    .    .   "
+      "cap3 cap3 cap3 cap3 .    .    .    .    .    .   "
+      "img2  img2  img2  img2 img2   img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2   img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2   img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2   img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2   img2 img2  img2  img2  img2 "
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__star-hero {
     grid-area: hero;
     /*  @extend %tile-gray-header; */
@@ -81,23 +106,23 @@ export default {
 
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     /* @extend %tile-white; */
     @extend %tile-purple;
   }
 
   &__caption2 {
     grid-area: cap2;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
 
   &__caption3 {
     grid-area: cap3;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
+    @media screen and (min-width: 700px) {
+      font-size: 2vw;
+    }
   }
 
   &__image {
@@ -128,6 +153,11 @@ export default {
 
   &__tile-fill {
     grid-area: fil;
+    @extend %tile-purple;
+  }
+
+  &__tile-fill2 {
+    grid-area: fil2;
     @extend %tile-purple;
   }
 
