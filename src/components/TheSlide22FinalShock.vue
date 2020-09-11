@@ -17,6 +17,7 @@
       </p>
     </div>
     <div class="slide__tile-fill"></div>
+    <div class="slide__tile-fill2"></div>
   </section>
 </template>
 
@@ -46,16 +47,28 @@ export default {
     "text text text text text ."
     ".      .     .   .   .   .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(9, 6.5vw);
+    grid-template-areas:
+      "cap  cap  cap cap .    .    .    .    .   .   "
+      "img  img  img img img  img  img  img  cap2 cap2 "
+      "img  img  img img img  img  img  img  cap2 cap2 "
+      "img  img  img img img  img  img  img  fil  .     "
+      "img  img  img img img  img  img  img  fil  fil2  "
+      "img  img  img img img  img  img  img  .    fil2  "
+      "text text text text text text text text text text"
+      "text text text text text text text text text text"
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     /* @extend %tile-white; */
     @extend %tile-purple;
   }
 
   &__caption2 {
     grid-area: cap2;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
@@ -75,6 +88,11 @@ export default {
 
   &__tile-fill {
     grid-area: fil;
+    @extend %tile-purple;
+  }
+
+  &__tile-fill2 {
+    grid-area: fil2;
     @extend %tile-purple;
   }
 
