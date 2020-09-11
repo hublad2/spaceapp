@@ -86,6 +86,15 @@ export default {
     ".    .    asid    asid asid asid"
     ".    .    .    .    .   .    ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(4, 6.5vw);
+    grid-template-areas:
+      "asid asid asid asid text text  text  text  text   text "
+      "asid asid asid asid text text  text  text  text   text "
+      "asid asid asid asid text text  text  text  text   text "
+      ".    .    .    .    .    .     .     .     .      .    ";
+  }
+
   &__text {
     grid-area: text;
     @extend %tile-gray-text;
@@ -111,10 +120,13 @@ export default {
 
     button {
       @extend %button;
-      font-size: 5vw;
       width: 70%;
       height: 35%;
       margin-top: 12%;
+
+      @media screen and (min-width: 700px) {
+        width: 75%;
+      }
     }
   }
 

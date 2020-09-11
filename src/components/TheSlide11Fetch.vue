@@ -49,11 +49,25 @@ export default {
     "img  img  img  img  img  img   "
     ".    .    .    .    .    .     ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(7, 6.5vw);
+    grid-template-areas:
+      "cap cap cap cap . .  .    .    .    .    "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      "img  img  img img img  img  img  img  img img "
+      ".    .    .    .    .    .   .    .    .    .  ";
+  }
+
   &__caption {
     grid-area: cap;
-    font-size: 4.5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
+    @media screen and (min-width: 700px) {
+      font-size: 2vw;
+    }
   }
 
   &__image {

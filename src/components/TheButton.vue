@@ -24,11 +24,17 @@ export default {
 
 .slide3 {
   @extend %slide-settings;
-  grid-template-rows: repeat(3, 16.6666vw);
+  grid-template-rows: repeat(2, 16.6666vw);
   grid-template-areas:
-    ".    .    .    .    .    .     "
     ".    but  but  but  but  .     "
     ".    .    .    .    .    .     ";
+
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(2, 6.5vw);
+    grid-template-areas:
+      ".    .    .   but but  but  but   .    .   .    "
+      ".    .    .   .   .    .    .     .    .   .    ";
+  }
 
   &__button {
     grid-area: but;
@@ -37,7 +43,6 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
     }
   }
 }
