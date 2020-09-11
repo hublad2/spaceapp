@@ -202,6 +202,10 @@ export default {
   &__caption-aside {
     grid-area: capa;
     @extend %tile-purple;
+
+    @media screen and (min-width: 700px) {
+      font-size: 2vw;
+    }
   }
 
   &__image-aside {
