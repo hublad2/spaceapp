@@ -96,33 +96,69 @@ export default {
     "img3  img3  img3  img3  img3  img3"
     ".    .    .    .    .    .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(28, 6.5vw);
+    grid-template-areas:
+      "hero  hero  hero  hero hero hero hero hero   hero  hero "
+      "hero  hero  hero  hero hero hero hero hero   hero  hero "
+      ".     .     .     .    .    .    .     .     .     .    "
+      "cap   cap   cap   cap  .    .    .     .     .     .    "
+      "img   img   img   img  img  img  img   img   img   img  "
+      "img   img   img   img  img  img  img   img   img   img  "
+      "img   img   img   img  img  img  img   img   img   img  "
+      "img   img   img   img  img  img  img   img   img   img  "
+      "img   img   img   img  img  img  img   img   img   img  "
+      "text  text  text  text text text text text2 text2 text2 "
+      "text  text  text  text text text text text2 text2 text2 "
+      "text  text  text  text text text text text2 text2 text2 "
+      "fil   fil   fil   .    .    .    .    text2 text2 text2 "
+      ".     .     .     .    .    .    .     .     .     .    "
+      ".     .     .     .    .    .    cap2  cap2  cap2  cap2 "
+      "img2  img2  img2  img2 img2 img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2 img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2 img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2 img2 img2  img2  img2  img2 "
+      "img2  img2  img2  img2 img2 img2 img2  img2  img2  img2 "
+      ".     .     .     .    .    .    .     .     .     .    "
+      "cap3  cap3  cap3  cap3 .    .    .     .     .     .    "
+      "img3  img3  img3  img3 img3 img3 img3  img3  img3  img3 "
+      "img3  img3  img3  img3 img3 img3 img3  img3  img3  img3 "
+      "img3  img3  img3  img3 img3 img3 img3  img3  img3  img3 "
+      "img3  img3  img3  img3 img3 img3 img3  img3  img3  img3 "
+      "img3  img3  img3  img3 img3 img3 img3  img3  img3  img3 "
+      ".     .     .     .    .    .    .     .     .     .    ";
+  }
+
   &__star-hero {
     grid-area: hero;
-    @extend %tile-gray-header;
-    /* @extend %tile-white-header; */
+    /* @extend %tile-gray-header; */
+    @extend %tile-white-header;
     /*  @extend %tile-white; */
     /* @extend %tile-gray; */
   }
 
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
 
   &__caption2 {
     grid-area: cap2;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
+    @media screen and (min-width: 700px) {
+      font-size: 2vw;
+    }
   }
 
   &__caption3 {
     grid-area: cap3;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
+    @media screen and (min-width: 700px) {
+      font-size: 2vw;
+    }
   }
 
   &__image {

@@ -67,6 +67,26 @@ export default {
     "text2  text2 text2 text2 text2 ."
     ".      .     .   .   .   .";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(15, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero  hero hero hero hero hero "
+      "hero hero hero hero hero  hero hero hero hero hero "
+      ".    .    .    .    .    .    .    .    .    .   "
+      ".     .     .     .     .     .     cap   cap   cap   cap "
+      "img   img   img   img   img   img   img   img   img   img "
+      "img   img   img   img   img   img   img   img   img   img "
+      "img   img   img   img   img   img   img   img   img   img "
+      "img   img   img   img   img   img   img   img   img   img "
+      "img   img   img   img   img   img   img   img   img   img "
+      ".     text  text  text  text  text  text  text  text  text"
+      "fil2  text  text  text  text  text  text  text  text  text"
+      "fil   fil   fil   fil   fil   fil   fil   fil   fil   fil "
+      "text2 text2 text2 text2 text2 text2 text2 text2 text2 fil3"
+      "text2 text2 text2 text2 text2 text2 text2 text2 text2 .   "
+      ".     .     .     .     .     .     .     .     .     .   ";
+  }
+
   &__star-hero {
     grid-area: hero;
     @extend %tile-gray-header;
@@ -77,7 +97,6 @@ export default {
 
   &__caption {
     grid-area: cap;
-    font-size: 5vw;
     @extend %tile-white;
     /* @extend %tile-purple; */
   }
