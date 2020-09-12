@@ -8,7 +8,8 @@
         W tym momencie możesz zdecydować, jaki temat chcesz kontynuować.
         <br />
         <br />
-        Kliknij w interesujący Cię temat, do reszty będziesz mógł wrócić.
+        Kliknij w interesujący Cię temat, do reszty będziesz mógł wrócić
+        później.
       </p>
     </div>
     <div class="slide__button">
@@ -53,6 +54,22 @@ export default {
     ".  but3 but3 but3 but3 ."
     ".    .    .    .    .    .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(11, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero  hero hero hero hero hero "
+      "hero hero hero hero hero  hero hero hero hero hero "
+      ".    .    .    .    .    .    .    .    .    .   "
+      "text text text text text . but but but but"
+      "text text text text text    .    .    .    .    .   "
+      "text text text text text . but2 but2 but2 but2"
+      "text text text text text    .    .    .    .    .   "
+      "text text text text text . but3 but3 but3 but3"
+      ".    .    .    .    .    .    .    .    .    .   "
+      ".    .    .    .    .    .    .    .    .    .   "
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__star-hero {
     grid-area: hero;
     /* @extend %tile-gray-header; */
@@ -73,7 +90,10 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2vw;
+      }
     }
   }
 
@@ -84,7 +104,10 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2vw;
+      }
     }
   }
 
@@ -95,7 +118,10 @@ export default {
       width: 100%;
       height: 100%;
       @extend %button;
-      font-size: 5vw;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2vw;
+      }
     }
   }
 }

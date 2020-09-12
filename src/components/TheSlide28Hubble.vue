@@ -15,7 +15,7 @@
       </p>
     </div>
     <div class="slide__tile-text2">
-      <h2>Prawo Hubble’a</h2>
+      <h2>Prawo Hubble’a:</h2>
       <h3>v = Hd</h3>
     </div>
   </section>
@@ -51,6 +51,19 @@ export default {
     "text2  text2 text2 text2 text2 text2"
     ".    .    .    .    .    .   ";
 
+  @media screen and (min-width: 700px) {
+    grid-template-rows: repeat(8, 6.5vw);
+    grid-template-areas:
+      "hero hero hero hero hero  hero hero hero hero hero "
+      "hero hero hero hero hero  hero hero hero hero hero "
+      ".    .    .    .    .    .    .    .    .    .   "
+      "text text text text text text text  text text text"
+      "text text text text text text text  text text text"
+      "text text text text text text text  text text text"
+      "text2 text2 text2 text2 text2 text2 text2  text2 text2 text2"
+      ".    .    .    .    .    .    .    .    .    .   ";
+  }
+
   &__star-hero {
     grid-area: hero;
     /* @extend %tile-gray-header; */
@@ -68,15 +81,28 @@ export default {
     grid-area: text2;
     @extend %tile-purple-text;
     flex-direction: column;
+    @media screen and (min-width: 700px) {
+      flex-direction: row;
+    }
 
     h2 {
       font-size: 10vw;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2vw;
+      }
     }
 
     h3 {
       margin-top: 10%;
       font-size: 12vw;
       font-style: italic;
+      font-weight: 600;
+
+      @media screen and (min-width: 700px) {
+        font-size: 2vw;
+        margin: 0 0 0 1%;
+      }
     }
   }
 }
