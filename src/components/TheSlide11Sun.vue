@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="slide">
+    <section class="slide" id="solar-system">
       <div class="slide__star-hero">
         <h1>Obiekty układu</h1>
       </div>

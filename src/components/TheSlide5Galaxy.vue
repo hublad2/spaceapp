@@ -25,7 +25,7 @@
       </p>
     </div>
     <div class="slide__tile-fill2"></div>
-    <div class="slide__stars-header">
+    <div class="slide__stars-header" id="star-evolution">
       <h4>Ewolucja gwiazd</h4>
     </div>
     <div class="slide__tile-text2">

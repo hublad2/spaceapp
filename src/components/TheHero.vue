@@ -69,6 +69,7 @@ export default {
     height: calc(57px + 2vw);
     z-index: 99;
     @extend %button;
+    cursor: pointer;
 
     @media screen and (min-width: 450px) {
       font-size: calc(2rem + 0.7vw);
