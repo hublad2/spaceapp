@@ -115,6 +115,7 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   overflow-y: hidden;
+  max-width: 1400px;
 }
 
 .background {

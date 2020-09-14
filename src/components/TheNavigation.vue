@@ -209,7 +209,7 @@ export default {
     flex-direction: column;
 
     li {
-      margin: 1.1vw 0;
+      margin: 0.9vw 0;
       display: flex;
       justify-content: center;
       border-radius: 50%;
@@ -223,9 +223,11 @@ export default {
       button {
         @extend %tile-purple;
         border: none;
-        font-size: 1.2vw;
+        font-size: 1vw;
         width: 9vw;
+        max-width: 200px;
         height: 4vw;
+        max-height: 70px;
         cursor: pointer;
       }
     }
