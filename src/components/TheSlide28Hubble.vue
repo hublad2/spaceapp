@@ -1,5 +1,5 @@
 <template>
-  <section class="slide">
+  <section class="slide" id="hubble">
     <div class="slide__star-hero">
       <h1>Prawo Hubble’a</h1>
     </div>

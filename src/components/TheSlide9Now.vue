@@ -1,5 +1,5 @@
 <template>
-  <section class="slide" id="now">
+  <section class="slide">
     <div class="slide__tile-bang">
       <h2>Po wielkim wybuchu</h2>
     </div>

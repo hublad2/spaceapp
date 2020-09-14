@@ -7,7 +7,12 @@
         </div>
       </li>
       <li v-for="navPoint in navigationList" :key="navPoint.id">
-        <button @click="moveToSlide(navPoint.id)">{{ navPoint.text }}</button>
+        <button
+          :class="{ whitefont: navPoint.isReached }"
+          @click="moveToSlide(navPoint.id)"
+        >
+          {{ navPoint.text }}
+        </button>
       </li>
       <li v-if="scrolledToBottom == false">
         <div class="button-background">
@@ -27,29 +32,48 @@ export default {
         navPoint1: {
           id: "#slide1",
           text: "Początki",
+          isReached: false,
         },
         navPoint2: {
           id: "#star-evolution",
           text: "Ewolucja gwiazd",
+          isReached: false,
         },
         navPoint3: {
-          id: "#now",
-          text: "Obecnie",
-        },
-        navPoint4: {
           id: "#solar-system",
           text: "Układ Słoneczny",
+          isReached: false,
+        },
+        navPoint4: {
+          id: "#beyond-neptune",
+          text: "Za Neptunem",
+          isReached: false,
+        },
+        navPoint5: {
+          id: "#galaxy",
+          text: "Galaktyka",
+          isReached: false,
+        },
+        navPoint6: {
+          id: "#hubble",
+          text: "Prawo Hubble'a",
+          isReached: false,
         },
       },
       scrolledToTop: false,
       scrolledToBottom: false,
       scrolledPastSlide1: false,
+      checkpoints: [],
     };
   },
   created() {
     window.addEventListener("scroll", this.isUserOnTop);
     window.addEventListener("scroll", this.isUserOnBottom);
     window.addEventListener("scroll", this.isUserPastHero);
+    window.addEventListener("scroll", this.checkWhereUserIs);
+  },
+  mounted() {
+    this.findAllCheckpoints();
   },
   methods: {
     moveToSlide(navPoint) {
@@ -75,13 +99,92 @@ export default {
     isUserPastHero() {
       let slide1Element = document.querySelector("#slide1");
 
-      if (window.scrollY > slide1Element.offsetTop) {
+      if (window.scrollY >= slide1Element.offsetTop) {
         this.scrolledPastSlide1 = true;
       } else {
         this.scrolledPastSlide1 = false;
       }
     },
-    updateWhereUserIs() {},
+    findAllCheckpoints() {
+      for (const key in this.navigationList) {
+        console.log(this.navigationList[key].id);
+        this.checkpoints.push(
+          document.querySelector(this.navigationList[key].id)
+        );
+      }
+    },
+    checkWhereUserIs() {
+      if (
+        window.scrollY >= this.checkpoints[0].offsetTop &&
+        window.scrollY < this.checkpoints[1].offsetTop
+      ) {
+        this.navigationList.navPoint1.isReached = true;
+        this.navigationList.navPoint2.isReached = false;
+        this.navigationList.navPoint3.isReached = false;
+        this.navigationList.navPoint4.isReached = false;
+        this.navigationList.navPoint5.isReached = false;
+        this.navigationList.navPoint6.isReached = false;
+      }
+
+      if (
+        window.scrollY >= this.checkpoints[1].offsetTop &&
+        window.scrollY < this.checkpoints[2].offsetTop
+      ) {
+        this.navigationList.navPoint1.isReached = false;
+        this.navigationList.navPoint2.isReached = true;
+        this.navigationList.navPoint3.isReached = false;
+        this.navigationList.navPoint4.isReached = false;
+        this.navigationList.navPoint5.isReached = false;
+        this.navigationList.navPoint6.isReached = false;
+      }
+
+      if (
+        window.scrollY >= this.checkpoints[2].offsetTop &&
+        window.scrollY < this.checkpoints[3].offsetTop
+      ) {
+        this.navigationList.navPoint1.isReached = false;
+        this.navigationList.navPoint2.isReached = false;
+        this.navigationList.navPoint3.isReached = true;
+        this.navigationList.navPoint4.isReached = false;
+        this.navigationList.navPoint5.isReached = false;
+        this.navigationList.navPoint6.isReached = false;
+      }
+
+      if (
+        window.scrollY >= this.checkpoints[3].offsetTop &&
+        window.scrollY < this.checkpoints[4].offsetTop
+      ) {
+        this.navigationList.navPoint1.isReached = false;
+        this.navigationList.navPoint2.isReached = false;
+        this.navigationList.navPoint3.isReached = false;
+        this.navigationList.navPoint4.isReached = true;
+        this.navigationList.navPoint5.isReached = false;
+        this.navigationList.navPoint6.isReached = false;
+      }
+      if (
+        window.scrollY >= this.checkpoints[4].offsetTop &&
+        window.scrollY < this.checkpoints[5].offsetTop
+      ) {
+        this.navigationList.navPoint1.isReached = false;
+        this.navigationList.navPoint2.isReached = false;
+        this.navigationList.navPoint3.isReached = false;
+        this.navigationList.navPoint4.isReached = false;
+        this.navigationList.navPoint5.isReached = true;
+        this.navigationList.navPoint6.isReached = false;
+      }
+
+      if (
+        window.scrollY >= this.checkpoints[5].offsetTop &&
+        window.scrollY < document.body.offsetHeight
+      ) {
+        this.navigationList.navPoint1.isReached = false;
+        this.navigationList.navPoint2.isReached = false;
+        this.navigationList.navPoint3.isReached = false;
+        this.navigationList.navPoint4.isReached = false;
+        this.navigationList.navPoint5.isReached = false;
+        this.navigationList.navPoint6.isReached = true;
+      }
+    },
   },
 };
 </script>
@@ -140,6 +243,10 @@ export default {
     border-radius: 50%;
     z-index: 0;
     cursor: pointer;
+  }
+
+  .whitefont {
+    color: $colorFont1;
   }
 }
 </style>

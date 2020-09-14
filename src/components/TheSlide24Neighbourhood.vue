@@ -1,5 +1,5 @@
 <template>
-  <section class="slide">
+  <section class="slide" id="star-neighbourhood">
     <div class="slide__star-hero">
       <h1>Gwiezdne sąsiedztwo układu</h1>
     </div>

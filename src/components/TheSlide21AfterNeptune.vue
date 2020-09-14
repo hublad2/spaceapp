@@ -1,5 +1,5 @@
 <template>
-  <section class="slide">
+  <section class="slide" id="beyond-neptune">
     <div class="slide__star-hero">
       <h1>Za Neptunem</h1>
     </div>
