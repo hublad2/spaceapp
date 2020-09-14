@@ -69,7 +69,7 @@ import TheButton from "@/components/TheButton.vue";
 import debounce from "lodash/debounce";
 
 export default {
-  name: "TheSlide15Mers",
+  name: "TheSlide15Mars",
   components: {
     TheSlide11Fetch,
     TheButton,
@@ -137,8 +137,6 @@ export default {
 
       let responseJSON = await response.json();
       let { sol_keys } = responseJSON;
-
-      console.log(responseJSON[sol_keys.pop()]);
 
       const {
         AT: { av: avgTemp, mn: minTemp, mx: maxTemp },
