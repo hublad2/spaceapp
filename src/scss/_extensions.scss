@@ -85,6 +85,24 @@
   }
 }
 
+%tile-text-interaction {
+  @extend %center;
+  background-color: white;
+  font-family: "Open Sans", sans-serif;
+  color: $colorFont2;
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 6vw;
+  p {
+    margin: 10%;
+  }
+
+  @media screen and (min-width: 700px) {
+    font-size: 1.5vw;
+    line-height: 2vw;
+  }
+}
+
 %tile-white {
   @extend %center;
   background-color: $colorTile3;

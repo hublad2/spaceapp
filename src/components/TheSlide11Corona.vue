@@ -108,7 +108,7 @@ export default {
 
   &__aside {
     grid-area: asid;
-    @extend %tile-purple-text;
+    @extend %tile-text-interaction;
     flex-direction: column;
     text-align: center;
 
