@@ -1,24 +1,12 @@
 # space-app
 
-## Project setup
-```
-npm install
-```
+Space-app is a site that guides you through the time, since the creation of the universe till now.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Whole site is sliced into vue components for easier modification, and each component is based on a grid of 6 columns for mobile and 10 for desktop.
+It also utilizes NASA API to fetch images, mars weather info and the number of coronal mass ejections in previous month.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## To-do
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- black-holes page
+- possible futures of the universe
+- heavy nuclei creation process description
