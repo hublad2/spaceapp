@@ -10,3 +10,17 @@ It also utilizes NASA API to fetch images, mars weather info and the number of c
 - black-holes page
 - possible futures of the universe
 - heavy nuclei creation process description
+
+## Presentation
+
+One of the sections
+![Section](https://i.imgur.com/kASxpqC.png)
+
+Example of an image acquired from NASA Image and Video Library API
+![Fetched image](https://i.imgur.com/PFd1Zc7.png)
+
+Checking Mars weather
+![Weather on mars](https://i.imgur.com/oBzeyUD.png)
+
+Checking the number of coronal mass ejections last month
+![Coronal mass ejections](https://i.imgur.com/hTF2jN2.png)
